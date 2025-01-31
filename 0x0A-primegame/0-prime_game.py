@@ -3,8 +3,12 @@
 
 def sieve_of_eratosthenes(n):
     # Generate prime numbers up to n using the Sieve of Eratosthenes.
+    # Args: n (int): The upper limit to find primes within.
+    # returns: list: A list of prime numbers up to n.
+
+    # intialize a boolean list to find prime numbers up to n
     primes = [True] * (n + 1)
-    primes[0] = primes[1] = False
+    primes[0] = primes[1] = False # 0 and 1 are not primes
     for i in range(2, int(n**0.5) + 1):
         if primes[i]:
             for j in range(i*i, n + 1, i):
