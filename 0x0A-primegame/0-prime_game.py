@@ -38,48 +38,18 @@ def simulate_game(n):
     """
     if n < 2:
         return 'Ben'
-    
+
     # Get prime numbers up to n
     primes = get_prime_numbers(n)
-    
+
     # If there are no prime numbers, Ben wins
     if not primes:
         return 'Ben'
-    
+
     # The winner can be determined by the number of prime numbers
     # If the number of moves (prime numbers) is even, Ben wins
     # If the number of moves (prime numbers) is odd, Maria wins
     return 'Maria' if len(primes) % 2 == 1 else 'Ben'
-
-
-    # # Get all numbers from 1 to n
-    # numbers = set(range(1, n + 1))
-    # primes = get_prime_numbers(n)
-
-    # # Simulate the game
-    # maria_turn = True
-    # while primes:
-    #     # Find the smallest available prime
-    #     current_prime = None
-    #     for prime in primes:
-    #         if prime in numbers:
-    #             current_prime = prime
-    #             break
-
-    #     if not current_prime:
-    #         break
-
-    #     # Remove the prime and its multiples
-    #     multiples = set(range(current_prime, n + 1, current_prime))
-    #     numbers -= multiples
-    #     primes.remove(current_prime)
-
-    #     # Switch turns
-    #     maria_turn = not maria_turn
-
-    # # If it's Maria's turn and no moves left, Ben wins
-    # # If it's Ben's turn and no moves left, Maria wins
-    # return 'Ben' if maria_turn else 'Maria'
 
 
 def isWinner(x, nums):
